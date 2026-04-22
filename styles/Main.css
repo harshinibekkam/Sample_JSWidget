@@ -1,0 +1,94 @@
+/* Container & Drop Zone */
+#widget-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+#drop-zone-ui {
+    border: 2px dashed #d1d4d6;
+    border-radius: 12px;
+    padding: 60px;
+    background: #fcfcfc;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.drag-over #drop-zone-ui {
+    border-color: #3d82e3;
+    background: #f0f6ff;
+    transform: scale(1.02);
+}
+
+/* Card Styling */
+.data-card {
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    width: 350px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 { margin: 0; font-size: 14px; color: #333; }
+
+.prop-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid #f9f9f9;
+    font-size: 13px;
+}
+
+.prop-row span { color: #666; }
+
+.id-badge {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #3d82e3;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary:hover { background-color: #2a6bc7; }
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #3d82e3;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Feedback */
+.success-box {
+    margin: 15px;
+    padding: 10px;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+    font-size: 12px;
+    border-radius: 4px;
+}
