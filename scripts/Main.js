@@ -12,7 +12,7 @@ require(['DS/DataDragAndDrop/DataDragAndDrop', 'config'], function (DataDragAndD
            var currentEnv = config.env;
 
 var myWidget = {
- 
+
     STREAM_KEY: config[currentEnv].STREAM_KEY,
     CLIENT_ID: config[currentEnv].CLIENT_ID,
             selectedItemId: null,
@@ -100,9 +100,7 @@ var myWidget = {
                 // Example: generate or fetch stream key dynamically
 myWidget.STREAM_KEY = item.id || config[currentEnv].STREAM_KEY;
                 console.log("Valid item:", item.displayName);
-    var streamkey=widget.getValue('streamkey');
-    console.log("streamkey id  " , streamkey); 
-myWidget.STREAM_KEY=streamkey;
+
                 // Inject Viewer
                 contentDiv.innerHTML = `
                     <div style="width:100%; height:100%;">
@@ -120,7 +118,6 @@ myWidget.STREAM_KEY=streamkey;
                 `;
 
                 console.log(" Viewer injected into DOM");
-                
 
                 setTimeout(() => {
                     console.log("Calling loadViewer...");
