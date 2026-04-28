@@ -2,15 +2,19 @@ function executeWidgetCode() {
 
     console.log(" Widget script started");
 
-    require(['DS/DataDragAndDrop/DataDragAndDrop'], function (DataDragAndDrop) {
-
+require(['DS/DataDragAndDrop/DataDragAndDrop', 'config'], function (DataDragAndDrop, config) {
         console.log("DataDragAndDrop loaded");
 
         var myWidget = {
 
-            STREAM_KEY: "tlnqapBHDN4zsGNcVkDfe9XesQ4BBrRl8yAd",
-            CLIENT_ID: "08F675C4AACE8C0214362DB5EFD4FACAFA556D463ECA00877CB225157EF58BFA",
+           // STREAM_KEY: "tlnqapBHDN4zsGNcVkDfe9XesQ4BBrRl8yAd",
+            //CLIENT_ID: "08F675C4AACE8C0214362DB5EFD4FACAFA556D463ECA00877CB225157EF58BFA",
+           var currentEnv = config.env;
 
+var myWidget = {
+ 
+    STREAM_KEY: config[currentEnv].STREAM_KEY,
+    CLIENT_ID: config[currentEnv].CLIENT_ID,
             selectedItemId: null,
 
             loadVertexScripts: function () {
@@ -93,8 +97,12 @@ function executeWidgetCode() {
                 }
 
                 const item = obj.data.items[0];
+                // Example: generate or fetch stream key dynamically
+myWidget.STREAM_KEY = item.id || config[currentEnv].STREAM_KEY;
                 console.log("Valid item:", item.displayName);
-
+    var streamkey=widget.getValue('streamkey');
+    console.log("streamkey id  " , streamkey); 
+myWidget.STREAM_KEY=streamkey;
                 // Inject Viewer
                 contentDiv.innerHTML = `
                     <div style="width:100%; height:100%;">
@@ -112,6 +120,7 @@ function executeWidgetCode() {
                 `;
 
                 console.log(" Viewer injected into DOM");
+                
 
                 setTimeout(() => {
                     console.log("Calling loadViewer...");
